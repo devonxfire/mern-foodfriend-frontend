@@ -34,6 +34,7 @@ export const useCreateMyRestaurant = () => {
     isLoading,
     isSuccess,
     error,
+    //dm
   } = useMutation(createMyRestaurantRequest);
 
   if (isSuccess) {
@@ -41,7 +42,8 @@ export const useCreateMyRestaurant = () => {
   }
 
   if (error) {
-    toast.error(error.message);
+    console.log(error);
+    toast.error("Unable to create restaurant");
   }
 
   return { createRestaurant, isLoading };
