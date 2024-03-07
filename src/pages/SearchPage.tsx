@@ -69,7 +69,9 @@ const SearchPage = () => {
           selectedCuisines={searchState.selectedCuisines}
           onChange={setSelectedCuisines}
           isExpanded={isExpanded}
-          onExpandedClick={() => setIsExpanded((prevIsExpanded) => !isExpanded)}
+          onExpandedClick={() =>
+            setIsExpanded((prevIsExpanded) => !prevIsExpanded)
+          }
         />
       </div>
       <div id="main-content" className="flex flex-col gap-5 ">
