@@ -23,6 +23,7 @@ const HomePage = () => {
         <SearchBar
           placeholder="Search by City or Town..."
           onSubmit={handleSearchSubmit}
+          searchQuery=""
         />
       </div>
 
