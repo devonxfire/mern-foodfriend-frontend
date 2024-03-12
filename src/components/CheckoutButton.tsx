@@ -13,7 +13,7 @@ type Props = {
   disabled: boolean;
 };
 
-const CheckoutButton = ({ onCheckout, disabled }) => {
+const CheckoutButton = ({ onCheckout, disabled }: Props) => {
   const {
     isAuthenticated,
     isLoading: isAuthLoading,
