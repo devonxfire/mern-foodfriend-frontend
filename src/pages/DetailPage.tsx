@@ -99,6 +99,7 @@ const DetailPage = () => {
         email: userFormData.email as string,
       },
     };
+    console.log(checkoutData);
 
     const data = await createCheckoutSession(checkoutData);
     window.location.href = data.url;
