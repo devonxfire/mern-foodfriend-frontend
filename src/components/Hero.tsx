@@ -1,10 +1,10 @@
-import hero from "../assets/hero.png";
+import hero3 from "../assets/hero3.png";
 
 const Hero = () => {
   return (
     <div>
       <img
-        src={hero}
+        src={hero3}
         alt="hero-image"
         className="w-full max-h-[600px] object-cover"
       />
