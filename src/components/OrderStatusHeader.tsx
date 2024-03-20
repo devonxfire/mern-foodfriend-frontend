@@ -10,12 +10,11 @@ const OrderStatusHeader = ({ order }: Props) => {
   const getExpectedDelivery = () => {
     const created = new Date(order.createdAt);
 
-    if (typeof order.restaurant.estimatedDeliveryTime === "number") {
+    // Check if order.restaurant exists and order.restaurant.estimatedDeliveryTime is not null or undefined
+    if (order.restaurant && order.restaurant.estimatedDeliveryTime != null) {
       created.setMinutes(
         created.getMinutes() + order.restaurant.estimatedDeliveryTime
       );
-    } else {
-      // Handle the case where estimatedDeliveryTime is undefined or not a number
     }
 
     const hours = created.getHours();
@@ -35,8 +34,8 @@ const OrderStatusHeader = ({ order }: Props) => {
   return (
     <>
       <h1 className="text-4xl font-bold tracking-tighter flex flex-col gap-5 md:flex-row md:justify-between">
-        <span>Order Status: {getOrderStatusInfo().label}</span>
-        <span>Expected by: {getExpectedDelivery()}</span>
+        <span> Order Status: {getOrderStatusInfo().label}</span>
+        <span> Expected by: {getExpectedDelivery()}</span>
       </h1>
       <Progress
         className="animate-pulse"

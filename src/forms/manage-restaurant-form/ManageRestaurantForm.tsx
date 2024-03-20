@@ -69,12 +69,12 @@ const ManageRestaurantForm = ({ onSave, isLoading, restaurant }: Props) => {
     if (!restaurant) return;
 
     const deliveryPriceFormatted = parseInt(
-      (restaurant.deliveryPrice / 100).toFixed(2)
+      restaurant.deliveryPrice.toFixed(2)
     );
 
     const menuItemsFormatted = restaurant.menuItems.map((item) => ({
       ...item,
-      price: parseInt((item.price / 100).toFixed(2)),
+      price: parseInt(item.price.toFixed(2)),
     }));
 
     const updatedRestaurant = {
@@ -95,7 +95,7 @@ const ManageRestaurantForm = ({ onSave, isLoading, restaurant }: Props) => {
 
     formData.append(
       "deliveryPrice",
-      (formDataJson.deliveryPrice * 100).toString()
+      (formDataJson.deliveryPrice * 10).toString()
     );
     formData.append(
       "estimatedDeliveryTime",
@@ -109,7 +109,7 @@ const ManageRestaurantForm = ({ onSave, isLoading, restaurant }: Props) => {
       formData.append(`menuItems[${index}][name]`, menuItem.name);
       formData.append(
         `menuItems[${index}][price]`,
-        (menuItem.price * 100).toString()
+        (menuItem.price * 10).toString()
       );
     });
 
