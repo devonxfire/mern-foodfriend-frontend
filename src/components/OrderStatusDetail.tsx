@@ -1,10 +1,13 @@
-import { Order } from "@/type";
+import { Order, Restaurant } from "@/type";
 import { Separator } from "./ui/separator";
+import { AspectRatio } from "./ui/aspect-ratio";
 
 type Props = {
   order: Order;
+  restaurant?: Restaurant;
 };
 const OrderStatusDetail = ({ order }: Props) => {
+  console.log(order);
   return (
     <div className="space-y-5">
       <div className="flex flex-col">
@@ -13,6 +16,7 @@ const OrderStatusDetail = ({ order }: Props) => {
         <span>
           {order.deliveryDetails.addressLine1}, {order.deliveryDetails.city}
         </span>
+        <span>{order.restaurant.city}</span>
       </div>
       <div className="flex flex-col">
         <span className="font-bold ">Your Order</span>
@@ -25,6 +29,7 @@ const OrderStatusDetail = ({ order }: Props) => {
         </ul>
       </div>
       <Separator />
+
       <div className="flex flex-col">
         <span className="font-bold">Total</span>
         <span>R{(order.totalAmount / 100).toFixed(2)}</span>

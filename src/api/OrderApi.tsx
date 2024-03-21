@@ -16,6 +16,10 @@ type CheckoutSessionRequest = {
     addressLine1: string;
     city: string;
   };
+  restaurant: {
+    imageUrl: string;
+    restaurantName: string;
+  };
   restaurantId: string;
 };
 
@@ -33,7 +37,6 @@ export const useGetMyOrders = () => {
     if (!response.ok) {
       throw new Error("Failed to fetch orders!");
     }
-
     return response.json();
   };
 
