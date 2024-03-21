@@ -91,6 +91,10 @@ const DetailPage = () => {
         quantity: cartItem.quantity,
       })),
       restaurantId: restaurant._id,
+      restaurant: {
+        restaurantName: restaurant.restaurantName,
+        imageUrl: restaurant.imageUrl,
+      },
       deliveryDetails: {
         name: userFormData.name,
         addressLine1: userFormData.addressLine1,
