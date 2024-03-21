@@ -1,6 +1,5 @@
 import { Order, Restaurant } from "@/type";
 import { Separator } from "./ui/separator";
-import { AspectRatio } from "./ui/aspect-ratio";
 
 type Props = {
   order: Order;
